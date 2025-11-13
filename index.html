@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Maqsood | Web Developer Portfolio</title>
+    <meta name="description" content="Personal portfolio of Muhammad Maqsood - Web Developer and Student">
+    <meta name="author" content="Muhammad Maqsood">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Muhammad Maqsood | Web Developer Portfolio">
+    <meta property="og:description" content="Web Developer & Student passionate about creating beautiful, functional websites and applications">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7C3AED">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <!-- if my png icon not available -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Maqsood",
+        "jobTitle": "Web Developer & Student",
+        "url": "https://yourportfolio.com",
+        "sameAs": [
+            "https://github.com/yourusername",
+            "https://linkedin.com/in/yourusername"
+        ]
+    }
+    </script>
+</head>
+<body class="font-sans antialiased">
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 transition-all duration-300" role="banner">
+        <nav class="container mx-auto px-6 py-4" role="navigation" aria-label="Main navigation">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center" aria-label="Maqsood Portfolio">
+                <img src="assets/images/logo.png" alt="Maqsood Logo" class="h-8 w-auto" />
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link" aria-label="Home section">Home</a>
+                    <a href="#about" class="nav-link" aria-label="About section">About</a>
+                    <a href="#skills" class="nav-link" aria-label="Skills section">Skills</a>
+                    <a href="#projects" class="nav-link" aria-label="Projects section">Projects</a>
+                    <a href="#contact" class="nav-link" aria-label="Contact section">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-menu-button md:hidden text-gray-700 dark:text-gray-300 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu hidden md:hidden mt-4 space-y-4 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg" role="menu">
+                <a href="#home" class="block nav-link" role="menuitem" aria-label="Home section">Home</a>
+                <a href="#about" class="block nav-link" role="menuitem" aria-label="About section">About</a>
+                <a href="#skills" class="block nav-link" role="menuitem" aria-label="Skills section">Skills</a>
+                <a href="#projects" class="block nav-link" role="menuitem" aria-label="Projects section">Projects</a>
+                <a href="#contact" class="block nav-link" role="menuitem" aria-label="Contact section">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center section-spacing relative overflow-hidden" aria-labelledby="hero-heading">
+            <!-- Particle Background -->
+            <canvas id="particleCanvas" class="absolute inset-0 w-full h-full" aria-hidden="true"></canvas>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/2 mb-10 md:mb-0 fade-in-up">
+                        <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                            Hi, I'm <span class="hero-gradient-text">Muhammad Maqsood</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mt-4 mb-8">
+                            Web Developer & Student
+                        </p>
+                        <p class="text-gray-500 dark:text-gray-400 mb-8 max-w-lg">
+                            Passionate about creating beautiful, functional websites and applications. Currently studying Web Development and building my skills in modern technologies.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#projects" class="btn-primary" aria-label="View my projects">View My Work</a>
+                            <a href="#contact" class="btn-secondary" aria-label="Get in touch">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center fade-in-up">
+                        <div class="profile-image-container">
+                            <div class="profile-image-inner">
+                                <img 
+                                    src="assets/images/profile.png" 
+                                    alt="Professional portrait of Muhammad Maqsood"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    width="320"
+                                    height="320"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+                    <a href="#about" class="text-gray-400 hover:text-purple-600 transition-colors" aria-label="Scroll to about section">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-spacing bg-gray-50 dark:bg-gray-800" aria-labelledby="about-heading">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 id="about-heading" class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Get to know my journey and passion for web development</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3 flex justify-center fade-in-up">
+                        <figure class="w-64 h-64 rounded-xl overflow-hidden shadow-lg">
+                            <img 
+                                src="assets/images/about-image.jpg" 
+                                alt="Muhammad Maqsood working on a laptop"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                width="256"
+                                height="256"
+                            >
+                        </figure>
+                    </div>
+                    
+                    <div class="md:w-2/3 fade-in-up">
+                        <h3 class="text-2xl font-semibold mb-4">Student & Aspiring Developer</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                            I'm a dedicated Web Development student with a passion for creating digital solutions that make a difference. My journey in technology began with curiosity about how websites work, and it has evolved into a commitment to mastering both front-end and back-end development.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                            Currently, I'm expanding my skills in modern web technologies, focusing on responsive design, user experience, and clean code practices. I believe in continuous learning and staying updated with industry trends.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <div class="flex items-center stagger-item">
+                                <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Web Development</span>
+                            </div>
+                            <div class="flex items-center stagger-item">
+                                <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Responsive Design</span>
+                            </div>
+                            <div class="flex items-center stagger-item">
+                                <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Problem Solving</span>
+                            </div>
+                            <div class="flex items-center stagger-item">
+                                <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Team Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-spacing" aria-labelledby="skills-heading">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 id="skills-heading" class="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Technologies and tools I work with</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Frontend Development Skill Card -->
+                    <article class="skill-card fade-in-up">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Building responsive and interactive user interfaces using modern frameworks and libraries.</p>
+                        
+                        <div class="space-y-3">
+                            <figure class="tooltip" data-tooltip="85% proficiency">
+                                <figcaption class="sr-only">HTML/CSS proficiency: 85%</figcaption>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">HTML/CSS</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="85%"></div>
+                                </div>
+                            </figure>
+                            
+                            <figure class="tooltip" data-tooltip="80% proficiency">
+                                <figcaption class="sr-only">JavaScript proficiency: 80%</figcaption>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">JavaScript</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="80%"></div>
+                                </div>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <!-- Backend Development Skill Card -->
+                    <article class="skill-card fade-in-up">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Designing and implementing robust server-side logic and database management.</p>
+                        
+                        <div class="space-y-3">
+                            <figure class="tooltip" data-tooltip="70% proficiency">
+                                <figcaption class="sr-only">Node.js proficiency: 70%</figcaption>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Node.js</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="70%"></div>
+                                </div>
+                            </figure>
+                            
+                            <figure class="tooltip" data-tooltip="65% proficiency">
+                                <figcaption class="sr-only">Databases proficiency: 65%</figcaption>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Databases (SQL/NoSQL)</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">65%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="65%"></div>
+                                </div>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <!-- UI/UX Design Skill Card -->
+                    <article class="skill-card fade-in-up">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v18"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 6H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Creating intuitive and aesthetically pleasing user interfaces with a focus on user experience.</p>
+                        
+                        <div class="space-y-3">
+                            <figure class="tooltip" data-tooltip="75% proficiency">
+                                <figcaption class="sr-only">Wireframing & Prototyping proficiency: 75%</figcaption>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Wireframing & Prototyping</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="75%"></div>
+                                </div>
+                            </figure>
+                            
+                            <figure class="tooltip" data-tooltip="70% proficiency">
+                                <figcaption class="sr-only">Figma/Adobe XD proficiency: 70%</figcaption>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Figma / Adobe XD</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="70%"></div>
+                                </div>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <!-- Version Control Skill Card -->
+                    <article class="skill-card fade-in-up">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h6M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Version Control</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Managing code changes and collaborating effectively using Git and GitHub.</p>
+                        
+                        <div class="space-y-3">
+                            <figure class="tooltip" data-tooltip="80% proficiency">
+                                <figcaption class="sr-only">Git proficiency: 80%</figcaption>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Git</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="80%"></div>
+                                </div>
+                            </figure>
+                            
+                            <figure class="tooltip" data-tooltip="75% proficiency">
+                                <figcaption class="sr-only">GitHub proficiency: 75%</figcaption>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">GitHub</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="75%"></div>
+                                </div>
+                            </figure>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="mt-16 fade-in-up">
+                    <h3 class="text-2xl font-semibold text-center mb-8">Tools & Technologies</h3>
+                    <div class="flex flex-wrap justify-center gap-4" role="list" aria-label="Tools and technologies">
+                        <span class="tool-tag" role="listitem">HTML5</span>
+                        <span class="tool-tag" role="listitem">CSS3</span>
+                        <span class="tool-tag" role="listitem">JavaScript (ES6+)</span>
+                        <span class="tool-tag" role="listitem">React.js</span>
+                        <span class="tool-tag" role="listitem">Node.js</span>
+                        <span class="tool-tag" role="listitem">Express.js</span>
+                        <span class="tool-tag" role="listitem">MongoDB</span>
+                        <span class="tool-tag" role="listitem">SQL</span>
+                        <span class="tool-tag" role="listitem">Git</span>
+                        <span class="tool-tag" role="listitem">GitHub</span>
+                        <span class="tool-tag" role="listitem">VS Code</span>
+                        <span class="tool-tag" role="listitem">Tailwind CSS</span>
+                        <span class="tool-tag" role="listitem">Bootstrap</span>
+                        <span class="tool-tag" role="listitem">Figma</span>
+                        <span class="tool-tag" role="listitem">Heroku</span>
+                        <span class="tool-tag" role="listitem">Netlify</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-spacing bg-gray-50 dark:bg-gray-800" aria-labelledby="projects-heading">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 id="projects-heading" class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Showcasing my recent work and personal projects</p>
+                </div>
+                
+                <!-- Mobile Scroll Container -->
+                <div class="projects-scroll-container md:grid md:grid-cols-3 md:gap-8" role="list" aria-label="Projects list">
+                    <!-- Project Card 1: E-commerce Website -->
+                    <article class="project-card project-scroll-item fade-in-up" role="listitem">
+                        <div class="relative h-48 overflow-hidden">
+                            <img 
+                                src="assets/images/project-1.png" 
+                                alt="E-commerce website with shopping cart functionality"
+                                class="w-full h-full object-cover transition-transform duration-500"
+                                loading="lazy"
+                                width="400"
+                                height="192"
+                            >
+                            <div class="project-overlay">
+                                <div class="flex space-x-4">
+                                    <a href="#" class="btn-primary" aria-label="View live project">View Live</a>
+                                    <a href="#" class="btn-secondary" aria-label="View source code">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">E-Commerce Website</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">A fully responsive e-commerce platform with product catalog, shopping cart, and checkout functionality.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">HTML</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">CSS</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2: Task Management App -->
+                    <article class="project-card project-scroll-item fade-in-up" role="listitem">
+                        <div class="relative h-48 overflow-hidden">
+                            <img 
+                                src="assets/images/project-2.png" 
+                                alt="Task Management App with drag-and-drop"
+                                class="w-full h-full object-cover transition-transform duration-500"
+                                loading="lazy"
+                                width="400"
+                                height="192"
+                            >
+                            <div class="project-overlay">
+                                <div class="flex space-x-4">
+                                    <a href="#" class="btn-primary" aria-label="View live project">View Project</a>
+                                    <a href="#" class="btn-secondary" aria-label="View source code">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">A productivity application for managing daily tasks with drag-and-drop functionality and progress tracking.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">React</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">Tailwind CSS</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3: Weather Dashboard -->
+                    <article class="project-card project-scroll-item fade-in-up" role="listitem">
+                        <div class="relative h-48 overflow-hidden">
+                            <img 
+                                src="assets/images/project-3.png" 
+                                alt="Weather Dashboard showing current and forecast weather"
+                                class="w-full h-full object-cover transition-transform duration-500"
+                                loading="lazy"
+                                width="400"
+                                height="192"
+                            >
+                            <div class="project-overlay">
+                                <div class="flex space-x-4">
+                                    <a href="#" class="btn-primary" aria-label="View live project">View Project</a>
+                                    <a href="#" class="btn-secondary" aria-label="View source code">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Weather Dashboard</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">A weather application that displays current conditions and forecasts using data from a weather API.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">JavaScript</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">API Integration</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">Bootstrap</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium px-3 py-1 rounded-full">Chart.js</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-spacing" aria-labelledby="contact-heading">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Let's discuss your next project or opportunity</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2 fade-in-up">
+                        <form class="space-y-6" id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name" class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Khokhar" required>
+                                <div class="error-message hidden text-red-500 text-sm mt-1" id="name-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Khokhar.123@example.com" required>
+                                <div class="error-message hidden text-red-500 text-sm mt-1" id="email-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Regarding a new project..." required>
+                                <div class="error-message hidden text-red-500 text-sm mt-1" id="subject-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="5" class="form-input" placeholder="Hello Muhammad, I'd like to discuss..." required></textarea>
+                                <div class="error-message hidden text-red-500 text-sm mt-1" id="message-error"></div>
+                            </div>
+                            <button type="submit" class="btn-primary w-full" id="submit-btn">
+                                <span class="submit-text">Send Message</span>
+                                <span class="loading-text hidden">Sending...</span>
+                            </button>
+                            <div class="success-message hidden text-green-500 text-center mt-4" id="success-message"></div>
+                        </form>
+                    </div>
+                    
+                    <div class="lg:w-1/2 fade-in-up">
+                        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl h-full">
+                            <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <img src="assets/icons/email.png" alt="WhatsApp" class="w-6 h-6 text-purple-600 dark:text-purple-400 mr-4 flex-shrink-0" />
+                                    <div>
+                                        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300">Email Me</h4>
+                                        <p class="text-gray-600 dark:text-gray-400">your.email@example.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <img src="assets/icons/location.png" alt="WhatsApp" class="w-6 h-6 text-purple-600 dark:text-purple-400 mr-4 flex-shrink-0" />
+                                    <div>
+                                        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300">Location</h4>
+                                        <p class="text-gray-600 dark:text-gray-400">Sahiwal, Pakistan</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <img src="assets/icons/whatsapp.png" alt="WhatsApp" class="w-6 h-6 text-purple-600 dark:text-purple-400 mr-4 flex-shrink-0" />
+                                    <div>
+                                        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-300">Call Me</h4>
+                                        <p class="text-gray-600 dark:text-gray-400">+123 456 7890</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" role="contentinfo">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#" class="text-2xl font-bold text-purple-400 mb-4 md:mb-0">Maqsood<span class="text-white">.</span></a>
+                <nav class="flex space-x-6" aria-label="Footer navigation">
+                    <a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                </nav>
+            </div>
+            <div class="flex justify-center space-x-4 mb-8">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile">
+                    <img src="assets/icons/github.png" alt="GitHub" class="w-6 h-6" />
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile">
+                    <img src="assets/icons/linkedin.png" alt="GitHub" class="w-6 h-6" />
+                </a>
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter Profile">
+                    <img src="assets/icons/twitter.png" alt="GitHub" class="w-6 h-6" />
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy;2025 Muhammad Maqsood. All rights reserved. | Student ID: 508899 | Course: Web Development | Instructor: Muhammad Omar</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="animations.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

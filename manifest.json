@@ -1,0 +1,25 @@
+{
+  "name": "Muhammad Maqsood Portfolio",
+  "short_name": "Maqsood Portfolio",
+  "description": "Personal portfolio of Muhammad Maqsood - Web Developer and Student",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F9FAFB",
+  "theme_color": "#7C3AED",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "web development", "personal"],
+  "lang": "en",
+  "dir": "ltr"
+}
